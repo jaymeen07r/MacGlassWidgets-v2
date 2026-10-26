@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MacGlass Widgets",
+  "version": "0.2.0",
+  "identifier": "in.macglass.widgets",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "MacGlass Widgets",
+        "width": 1100,
+        "height": 760,
+        "minWidth": 720,
+        "minHeight": 520,
+        "center": true,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "resizable": true,
+        "maximizable": false,
+        "minimizable": true,
+        "alwaysOnTop": false,
+        "skipTaskbar": false,
+        "backgroundColor": "#00000000",
+        "windowEffects": { "effects": ["acrylic"], "state": "active" }
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' asset: http://asset.localhost; img-src 'self' asset: http://asset.localhost data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src ipc: http://ipc.localhost https://geocoding-api.open-meteo.com https://api.open-meteo.com"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "shortDescription": "Frosted glass desktop widgets",
+    "category": "Utility"
+  }
+}
